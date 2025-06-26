@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Курс: Физика</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to right, #4a90e2, #50e3c2);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      transition: 0.3s;
+      user-select: none;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .course-container {
+      max-width: 800px;
+      margin: 60px auto 40px;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      user-select: none;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    p.description {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.4;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      margin-bottom: 30px;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .course-info {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px 25px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      margin-bottom: 30px;
+      color: #e0f7f7;
+    }
+
+    .course-info h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #b0f0e0;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 3px #10696b;
+    }
+
+    .course-info p,
+    .course-info ul {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .course-info ul {
+      margin-left: 20px;
+      list-style-type: disc;
+    }
+
+    .btn-download {
+      display: inline-block;
+      background: #30cfd0;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(48, 207, 208, 0.7);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      user-select: none;
+    }
+
+    .btn-download:hover {
+      background-color: #5ff5f7;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .course-container {
+        margin: 40px 15px 30px;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .course-info h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">КУРС: ФИЗИКА</div>
+    <nav><a href="/dashboard">← Назад</a></nav>
+  </header>
+
+  <div class="course-container">
+    <h1>Механика и электродинамика. 10 класс.</h1>
+    <p class="description">Изучите основные законы механики и электродинамики, научитесь решать задачи с реальными физическими процессами.</p>
+
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/ELLYpRa_74Y"
+        title="Видеоурок по физике"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <section class="course-info">
+      <h2>Что включает курс:</h2>
+      <ul>
+        <li>Подробные видео с теорией и примерами</li>
+        <li>Практические задачи и тесты</li>
+        <li>Дополнительные материалы для скачивания</li>
+        <li>Обратная связь от преподавателя</li>
+        <li>Итоговый экзамен и сертификат</li>
+      </ul>
+      
+      <h2>Список уроков:</h2>
+      <ul>
+        <li>Урок 1: Основы кинематики</li>
+        <li>Урок 2: Законы Ньютона</li>
+        <li>Урок 3: Электродинамика и электрические цепи</li>
+      </ul>
+
+      <a href="/downloads/physics-course-materials.zip" class="btn-download" download>
+        Скачать материалы курса
+      </a>
+    </section>
+
+  </div>
+
+</body>
+</html>

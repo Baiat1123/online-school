@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Курс: Математика</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      transition: 0.3s;
+      user-select: none;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .course-container {
+      max-width: 800px;
+      margin: 60px auto 40px;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      user-select: none;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    p.description {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.4;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      margin-bottom: 30px;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Новые блоки */
+
+    .course-info {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px 25px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      margin-bottom: 30px;
+      color: #f0f0f0;
+    }
+
+    .course-info h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #e0d7ff;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 3px #3b3b9d;
+    }
+
+    .course-info p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .course-info ul {
+      margin: 0 0 15px 20px;
+      padding: 0;
+      list-style-type: disc;
+      color: #d4d4ff;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .course-info ul li {
+      margin-bottom: 8px;
+    }
+
+    .btn-download {
+      display: inline-block;
+      background: #8a7ce5;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(138, 124, 229, 0.6);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      user-select: none;
+    }
+
+    .btn-download:hover {
+      background-color: #a594f7;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .course-container {
+        margin: 40px 15px 30px;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .course-info h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">КУРС: МАТЕМАТИКА</div>
+    <nav><a href="/dashboard">← Назад</a></nav>
+  </header>
+
+  <div class="course-container">
+    <h1>Отношение двух чисел. 6 класс.</h1>
+    <p class="description">Узнайте, как решать квадратные уравнения с помощью дискриминанта и получите прочную базу для дальнейших математических успехов.</p>
+
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/zHdsvE71sNk" 
+        title="Видеоурок по математике"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <section class="course-info">
+      <h2>Что включает курс:</h2>
+      <ul>
+        <li>Видеоуроки с подробными объяснениями и практическими примерами</li>
+        <li>Тесты и задания для закрепления материала</li>
+        <li>Материалы для скачивания (конспекты, примеры задач)</li>
+        <li>Поддержка преподавателя и обсуждение в чате</li>
+        <li>Итоговый сертификат по окончании курса</li>
+      </ul>
+      
+      <h2>Список уроков:</h2>
+      <ul>
+        <li>Урок 1: Введение в отношения чисел</li>
+        <li>Урок 2: Квадратные уравнения и дискриминант</li>
+        <li>Урок 3: Практические задачи и решения</li>
+      </ul>
+
+      <a href="/downloads/math-course-materials.zip" class="btn-download" download>
+        Скачать материалы курса
+      </a>
+    </section>
+
+  </div>
+
+</body>
+</html>

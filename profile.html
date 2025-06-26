@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Профиль пользователя | Онлайн-школа</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --accent: #a78bfa;
+      --bg-gradient: linear-gradient(135deg, #eef2ff, #e0e7ff);
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --white: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --btn-bg: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .profile-container {
+      background: var(--white);
+      max-width: 900px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px var(--shadow);
+      padding: 2rem 3rem;
+      box-sizing: border-box;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      border-bottom: 2px solid #e0e7ff;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 5px solid var(--accent);
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      background: #ddd;
+    }
+    .avatar:hover {
+      transform: scale(1.05);
+    }
+
+    .user-info {
+      flex-grow: 1;
+    }
+    .user-name {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .user-email {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-top: 0.3rem;
+    }
+
+    /* Кнопки редактирования */
+    .btn-group {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 1rem;
+    }
+    button {
+      padding: 0.7rem 1.6rem;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--white);
+      background: var(--btn-bg);
+      transition: filter 0.3s ease;
+    }
+    button:hover {
+      filter: brightness(1.1);
+    }
+
+    /* Секции */
+    section {
+      margin-bottom: 2rem;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    /* Расписание */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .schedule-table th,
+    .schedule-table td {
+      padding: 1rem 1.5rem;
+      text-align: left;
+      background: var(--white);
+    }
+    .schedule-table th {
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+    }
+    .schedule-table tr:nth-child(even) td {
+      background: #f0f4ff;
+    }
+
+    /* История обучения */
+    .history-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .history-item {
+      background: #f9faff;
+      border-left: 5px solid var(--accent);
+      margin-bottom: 1rem;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .history-item h3 {
+      margin: 0 0 0.3rem 0;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .history-item p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="profile-container">
+    <div class="profile-header">
+<img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Spiderman50.jpg" alt="" class="avatar" />
+
+      <div class="user-info">
+        <h1 class="user-name">Байат Сагындыков</h1>
+        <p class="user-email">bayat.sagyndykov@example.com</p>
+        <div class="btn-group">
+          <button>Редактировать профиль</button>
+          <button>Сменить пароль</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="schedule">
+      <h2>Расписание занятий</h2>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>День недели</th>
+            <th>Время</th>
+            <th>Курс</th>
+            <th>Преподаватель</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Понедельник</td>
+            <td>16:00 - 18:00</td>
+            <td>Математика</td>
+            <td>Иван Иванов</td>
+          </tr>
+          <tr>
+            <td>Среда</td>
+            <td>17:00 - 19:00</td>
+            <td>Физика</td>
+            <td>Мария Смирнова</td>
+          </tr>
+          <tr>
+            <td>Пятница</td>
+            <td>15:00 - 17:00</td>
+            <td>Химия</td>
+            <td>Антон Петров</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="history">
+      <h2>История обучения</h2>
+      <ul class="history-list">
+        <li class="history-item">
+          <h3>Курс: Математика</h3>
+          <p>Завершён 10 марта 2025 г.</p>
+        </li>
+        <li class="history-item">
+          <h3>Курс: Физика</h3>
+          <p>В процессе</p>
+        </li>
+        <li class="history-item">
+          <h3>Курс: Химия</h3>
+          <p>Завершён 20 января 2025 г.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+</body>
+</html>

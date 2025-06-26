@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вход и регистрация</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-400 to-purple-600 min-h-screen flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8">
+    <div class="flex justify-center mb-8">
+      <button id="loginTab" class="px-6 py-2 font-semibold border-b-4 border-blue-600 text-blue-700 transition">Войти</button>
+      <button id="registerTab" class="px-6 py-2 font-semibold border-b-4 border-transparent text-gray-500 hover:text-blue-600 transition">Регистрация</button>
+    </div>
+
+    <!-- Форма Входа -->
+    <form id="loginForm" class="space-y-6">
+      <input type="email" id="loginEmail" placeholder="Email" required
+        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <input type="password" id="loginPassword" placeholder="Пароль" required
+        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <button type="submit"
+        class="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition font-semibold">Войти</button>
+    </form>
+
+    <!-- Форма Регистрации -->
+    <form id="registerForm" class="space-y-6 hidden">
+      <input type="text" id="regName" placeholder="Имя пользователя" required
+        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <input type="email" id="regEmail" placeholder="Email" required
+        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <input type="password" id="regPassword" placeholder="Пароль" required
+        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <button type="submit"
+        class="w-full bg-green-600 text-white py-3 rounded-xl hover:bg-green-700 transition font-semibold">Зарегистрироваться</button>
+    </form>
+  </div>
+
+  <script>
+    const loginTab = document.getElementById('loginTab');
+    const registerTab = document.getElementById('registerTab');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+
+    loginTab.addEventListener('click', () => {
+      loginForm.classList.remove('hidden');
+      registerForm.classList.add('hidden');
+      loginTab.classList.add('border-blue-600', 'text-blue-700');
+      loginTab.classList.remove('border-transparent', 'text-gray-500');
+      registerTab.classList.remove('border-blue-600', 'text-blue-700');
+      registerTab.classList.add('border-transparent', 'text-gray-500');
+    });
+
+    registerTab.addEventListener('click', () => {
+      registerForm.classList.remove('hidden');
+      loginForm.classList.add('hidden');
+      registerTab.classList.add('border-blue-600', 'text-blue-700');
+      registerTab.classList.remove('border-transparent', 'text-gray-500');
+      loginTab.classList.remove('border-blue-600', 'text-blue-700');
+      loginTab.classList.add('border-transparent', 'text-gray-500');
+    });
+
+    // Обработка входа
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      const res = await fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+      alert(data.message);
+    });
+
+    // Обработка регистрации
+    registerForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      const password = document.getElementById('regPassword').value;
+
+      const res = await fetch('/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password })
+      });
+
+      const data = await res.json();
+      alert(data.message);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Курсы | Онлайн-школа</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #5c6ac4;
+      --accent: #7c88f5;
+      --bg: #f3f6ff;
+      --text: #1f2937;
+      --white: #ffffff;
+      --shadow-light: rgba(92, 106, 196, 0.15);
+      --shadow-hover: rgba(92, 106, 196, 0.3);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: "Segoe UI", sans-serif;
+      background: var(--bg); color: var(--text);
+      min-height: 100vh; display: flex; flex-direction: column;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      color: var(--white); padding: 1.2rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 5px 15px var(--shadow-light);
+      font-weight: 600; font-size: 1.25rem;
+    }
+    nav a {
+      color: var(--white); margin-left: 1.8rem;
+      text-decoration: none; font-weight: 600;
+      padding: 0.3rem 0.5rem; border-radius: 6px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    nav a:hover {
+      background-color: rgba(255 255 255 / 0.2);
+      transform: scale(1.05);
+    }
+    main {
+      max-width: 1140px; margin: 2.5rem auto 3rem;
+      padding: 0 1.2rem; flex-grow: 1;
+    }
+    .title {
+      text-align: center; font-size: 2.4rem; font-weight: 700;
+      color: var(--primary); margin-bottom: 3rem;
+      letter-spacing: 0.05em; text-shadow: 1px 1px 3px rgba(124,136,245,0.3);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 2.8rem;
+    }
+    .card {
+      background: var(--white); padding: 2.5rem 2rem 3rem;
+      border-radius: 18px; box-shadow: 0 12px 25px var(--shadow-light);
+      text-align: center; cursor: pointer;
+      transition: transform 0.35s, box-shadow 0.35s;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 36px var(--shadow-hover);
+    }
+    .icon {
+      font-size: 4.5rem; margin-bottom: 1.4rem; color: var(--primary);
+    }
+    .card h3 {
+      margin: .4rem 0 1rem; color: var(--primary);
+      font-weight: 700; font-size: 1.8rem;
+    }
+    .card p {
+      font-size: 1.05rem; line-height: 1.4; color: #4b5563;
+      flex-grow: 1; margin-bottom: 1.6rem;
+    }
+    .btn {
+      padding: .75rem 1.8rem;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      color: var(--white); border: none; border-radius: 10px;
+      font-weight: 700; font-size: 1rem;
+      box-shadow: 0 6px 14px rgba(92,106,196,0.4);
+      transition: filter 0.3s, transform 0.3s;
+      display: inline-block; align-self: center;
+    }
+    .btn:hover {
+      filter: brightness(1.12); transform: scale(1.05);
+    }
+    footer {
+      text-align: center; padding: 1.8rem 1rem;
+      background: #e0e7ff; font-size: .95rem; color: #374151;
+    }
+    @media (max-width: 480px) {
+      header { flex-direction: column; font-size: 1.1rem; }
+      .title { font-size: 1.8rem; }
+      .card { padding: 2rem 1.5rem 2.5rem; }
+      .btn { padding: .65rem 1.5rem; font-size: .95rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>ОНЛАЙН ШКОЛА</div>
+    <nav>
+      <a href="index.html">🏠 Главная</a>
+      <a href="login.html">Вход</a>
+      
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="title">Выберите курс для обучения</h1>
+
+    <div class="grid">
+      <div class="card">
+        <div class="icon">📐</div>
+        <h3>Математика</h3>
+        <p>Алгебра, геометрия, ЕГЭ и ОГЭ — всё в одном месте!</p>
+        <a href="course-math.html" class="btn">Перейти к курсу</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚛️</div>
+        <h3>Физика</h3>
+        <p>Механика, электродинамика, теория и задачи с пояснением.</p>
+        <a href="course-physics.html" class="btn">Перейти к курсу</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🧪</div>
+        <h3>Химия</h3>
+        <p>От таблицы Менделеева до органики — легко и понятно.</p>
+        <a href="course-chemistry.html" class="btn">Перейти к курсу</a>
+      </div>
+
+      
+      <div class="card">
+        <div class="icon">✍️</div>
+        <h3>Русский язык</h3>
+        <p>Грамматика, орфография, подготовка к ЕГЭ и сочинению.</p>
+        <a href="course-russian.html" class="btn">Перейти к курсу</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Онлайн-школа. Все права защищены.
+  </footer>
+
+</body>
+</html>
